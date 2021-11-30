@@ -2,7 +2,6 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
 
 jobs:
   test:
@@ -20,4 +19,3 @@ jobs:
             override: true
       - name: Run tests
         run: cargo build
-
