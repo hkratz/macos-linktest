@@ -10,6 +10,7 @@ jobs:
       matrix:
         os: [macos-latest]
         toolchain: [stable, beta, nightly ]
+      fail-fast: false
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
