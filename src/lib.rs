@@ -1,2 +1,2 @@
-#[link(name = "CoreGraphics", kind = "framework")]
+#[link(name = "AppKit", kind = "framework")]
 extern "C" {}
