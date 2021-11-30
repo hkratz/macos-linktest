@@ -10,6 +10,7 @@ jobs:
       matrix:
         os: [macos-latest]
         toolchain: [stable, beta, nightly ]
+        deployment-target: ["", "10.7", "10.8"]
       fail-fast: false
     steps:
       - uses: actions/checkout@v2
@@ -19,12 +20,6 @@ jobs:
             profile: minimal
             override: true
       - name: Run tests
-        run: cargo build
-      - name: Run tests with deployment target 10.7
         env:
-          MACOSX_DEPLOYMENT_TARGET: 10.7
-        run: cargo build
-      - name: Run tests with deployment target 10.8
-        env:
-          MACOSX_DEPLOYMENT_TARGET: 10.8
+          MACOSX_DEPLOYMENT_TARGET: ${{ matrix.deployment-target }}
         run: cargo build
